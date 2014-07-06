@@ -11,8 +11,8 @@ class MainScreen < PM::Screen
   end
 
   def init_socket
-    #@url = NSURL.URLWithString("ws://localhost:3000/")
-    @url =  NSURL.URLWithString("ws://warm-caverns-6253.herokuapp.com/")
+    @url = NSURL.URLWithString("ws://localhost:3000/")
+    #@url =  NSURL.URLWithString("ws://warm-caverns-6253.herokuapp.com/")
     @request = NSURLRequest.requestWithURL(@url)
     @socket = SRWebSocket.alloc.initWithURLRequest(@request)
     @socket.delegate = self

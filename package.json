@@ -1,0 +1,19 @@
+{
+  "name": "rm-websockets",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amirrajan/rm-websockets.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amirrajan/rm-websockets/issues"
+  },
+  "homepage": "https://github.com/amirrajan/rm-websockets"
+}
