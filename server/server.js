@@ -12,5 +12,5 @@ wss.on('connection', function(ws) {
     setInterval(function(){
       count++;
       ws.send(count.toString());
-    }, 3000);
+    }, 30);
 });

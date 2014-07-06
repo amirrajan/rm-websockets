@@ -11,7 +11,8 @@ class MainScreen < PM::Screen
   end
 
   def init_socket
-    @url = NSURL.URLWithString("ws://localhost:3000/")
+    #@url = NSURL.URLWithString("ws://localhost:3000/")
+    @url =  NSURL.URLWithString("ws://warm-caverns-6253.herokuapp.com/")
     @request = NSURLRequest.requestWithURL(@url)
     @socket = SRWebSocket.alloc.initWithURLRequest(@request)
     @socket.delegate = self
@@ -40,7 +41,7 @@ class MainScreen < PM::Screen
   end
   
   def webSocket(webSocket, didFailWithError: error)
-    NSLog("failed!")
+    NSLog("failed! #{error.localizedDescription}")
   end
 
   def webSocket(webSocket, didCloseWithCode: code, reason: reason, wasClean: wasClean)
