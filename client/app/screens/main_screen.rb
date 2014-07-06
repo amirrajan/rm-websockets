@@ -4,6 +4,7 @@ class MainScreen < PM::Screen
   end
 
   def on_appear
+    @socket_delgate ||= SocketDelegate.new
     add_connect_button
     add_label
     init_socket
@@ -15,7 +16,7 @@ class MainScreen < PM::Screen
     #@url =  NSURL.URLWithString("ws://warm-caverns-6253.herokuapp.com/")
     @request = NSURLRequest.requestWithURL(@url)
     @socket = SRWebSocket.alloc.initWithURLRequest(@request)
-    @socket.delegate = self
+    @socket.delegate = @socket_delgate
   end
 
   def add_connect_button
@@ -39,7 +40,7 @@ class MainScreen < PM::Screen
   def webSocketDidOpen(newWebSocket)
     NSLog("opened!")
   end
-  
+
   def webSocket(webSocket, didFailWithError: error)
     NSLog("failed! #{error.localizedDescription}")
   end
@@ -61,7 +62,7 @@ class MainScreen < PM::Screen
       :number_of_lines => 10,
       :font_size => 14
     }.merge options
-    
+
     set_attributes label, {
       text: options[:text],
       number_of_lines: options[:number_of_lines],
