@@ -2,7 +2,7 @@ class SocketDelegate
   def webSocketDidOpen(newWebSocket)
     NSLog("opened!")
   end
-  
+
   def webSocket(webSocket, didFailWithError: error)
     NSLog("failed!")
   end
